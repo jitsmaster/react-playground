@@ -3,7 +3,7 @@ import ContactEntry from "./ContactEntry";
 import { Contact } from "./models";
 
 function ContactList() {
-	const contacts = useSelector((state: any) => state.contacts.contacts)
+	const contacts = useSelector((state: any) => state.contacts as Contact[])
 	return (
 		<ul>
 			{contacts.map((contact: Contact) => (
