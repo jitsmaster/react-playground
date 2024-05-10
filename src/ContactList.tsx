@@ -1,13 +1,13 @@
-import { useSelector } from "react-redux";
 import ContactEntry from "./ContactEntry";
-import { Contact } from "./models";
+import { useAppSelector } from "./hooks/hooks.ts";
+import { Contact } from "./model/models";
 
 function ContactList() {
-	const contacts = useSelector((state: any) => state.contacts as Contact[])
+	const contacts = useAppSelector(state => state.contacts as Contact[])
 	return (
 		<ul>
 			{contacts.map((contact: Contact) => (
-				<ContactEntry contact={contact} />
+				<ContactEntry key={contact.id} contact={contact} />
 			))}
 		</ul>
 	);

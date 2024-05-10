@@ -1,10 +1,10 @@
-import { useDispatch } from 'react-redux';
-import { removeContact } from './contactSlice';
-import { Contact } from './models';
+import { useAppDispatch } from './hooks/hooks';
+import { Contact } from './model/models';
+import { removeContact } from './store/contactSlice';
 
 
 function ContactEntry({ contact }: { contact: Contact }) {
-	const dispatch = useDispatch()
+	const dispatch = useAppDispatch()
 	const handleDeleteContact = (id: number) => {
 		dispatch(removeContact(id))
 	}

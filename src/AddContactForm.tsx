@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addContact } from "./contactSlice";
-import { generateId } from "./store";
+import { addContact } from "./store/contactSlice";
+import { generateId } from "./store/store";
 
 function AddContactForm() {
 	const [name, setName] = useState("");

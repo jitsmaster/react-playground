@@ -1,5 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { Contact } from "./models";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { Contact } from "../model/models";
 
 export const contactSlice = createSlice({
 	name: 'contact',
@@ -8,8 +8,10 @@ export const contactSlice = createSlice({
 		addContact: (state, action) => {
 			state.push(action.payload)
 		},
-		removeContact: (state, action) => {
-			state = state.filter(contact => contact.id !== action.payload)
+		removeContact: (state, action: PayloadAction<number>) => {
+			state = state.filter(contact => {
+				return contact.id !== action.payload;
+			})
 		}
 	}
 });
