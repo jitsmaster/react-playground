@@ -3,13 +3,15 @@ import { Contact } from "../model/models";
 
 export const contactSlice = createSlice({
 	name: 'contact',
-	initialState: [] as Contact[],
+	initialState: {
+		contacts: [] as Contact[]
+	},
 	reducers: {
 		addContact: (state, action) => {
-			state.push(action.payload)
+			state.contacts.push(action.payload)
 		},
 		removeContact: (state, action: PayloadAction<number>) => {
-			state = state.filter(contact => {
+			state.contacts = state.contacts.filter(contact => {
 				return contact.id !== action.payload;
 			})
 		}

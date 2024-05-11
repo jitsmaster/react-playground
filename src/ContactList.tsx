@@ -3,7 +3,7 @@ import { useAppSelector } from "./hooks/hooks.ts";
 import { Contact } from "./model/models";
 
 function ContactList() {
-	const contacts = useAppSelector(state => state.contacts as Contact[])
+	const contacts = useAppSelector(state => state.contacts.contacts)
 	return (
 		<ul>
 			{contacts.map((contact: Contact) => (
