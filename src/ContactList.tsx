@@ -1,6 +1,6 @@
-import ContactEntry from "./ContactEntry";
+import ContactEntry from "./ContactEntry.tsx";
 import { useAppSelector } from "./hooks/hooks.ts";
-import { Contact } from "./model/models";
+import { Contact } from "./model/models.ts";
 
 function ContactList() {
 	const contacts = useAppSelector(state => state.contacts.contacts)
